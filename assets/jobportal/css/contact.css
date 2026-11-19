@@ -1,0 +1,56 @@
+.contact-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px; /* ✅ Adds gap between cards */
+}
+
+/* Hover effect for subtle animation */
+.contact-card:hover {
+   background-color: #FBDDDF;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Text inside cards */
+.contact-card p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Title styling */
+.fw-bold.mb-3 {
+  color: #2c3e50;
+}
+
+/* Responsive padding for mobile */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 15px;
+  }
+}
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 100%;
+/*  height: 100%;*/
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+  height: 450px; /* map height */
+  margin: 0; /* ensure no extra space */
+  padding: 0; /* ensure no extra space */
+}
+
+@media (max-width: 768px) {
+  .gmap_canvas {
+    height: 350px; /* smaller map on mobile */
+  }
+}

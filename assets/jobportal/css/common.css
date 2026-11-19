@@ -1,0 +1,120 @@
+ .site-section
+    {
+      background:#FBDDDF !important;
+    }
+    .bg-primary {
+      background: #F5959C !important;
+    }
+   .block__87154.bg-primary {
+        box-shadow: 0px 10px 20px rgba(245, 149, 156, 0.4) !important;
+        -webkit-box-shadow: 0px 10px 20px rgb(217 98 107 / 40%) !important;;
+    }
+    .btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle {
+        color: #ffffff;
+        background-color: #F5959C !important;
+        border-color: #F5959C !important;
+    }
+
+    .btn-tab-spacing {
+        margin: 0 6px;
+    }
+    .card-body.text-start {
+        text-align: left !important;
+    }
+   .card-body h6 {
+        margin-bottom: 0.5rem;
+    }
+    .font-weight-bold1 {
+          font-weight: 600 !important;
+              font-size: 18px !important;
+    }
+    .font-weight-bold-medium {
+        /*  font-weight: 600 !important;*/
+              font-size: 16px !important;
+    }
+    .site-section1 {
+            padding-top: 2rem !important;
+            padding-bottom: 7rem !important;
+            position: relative !important;
+            z-index: 2 !important;
+    }
+
+/*=========================== jequery images ===========================*/
+
+ .logo-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo-box {
+    width: 100px;
+    height: 100px;
+    background-color: #f4a261;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  #initialLetter {
+    z-index: 1;
+  }
+
+  .camera-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: -7px;
+    right: -4px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .edit-icon {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+    color: #1976d2;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  }
+
+  .editable-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  #editTextarea {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 100px;
+  }
+  
+  
+  

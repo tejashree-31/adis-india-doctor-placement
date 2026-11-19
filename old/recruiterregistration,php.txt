@@ -1,0 +1,217 @@
+<?php $session = session(); 
+$email = session()->get('email');
+?>
+    <style>
+          .btn.btn-primary.btn-md:disabled {
+              cursor: not-allowed !important;
+              pointer-events: none !important;
+              opacity: 0.6 !important;
+              color: #fff !important;
+              background-color: #F5959C !important;
+              border-color: #F5959C !important;
+            }
+            .is-invalid {
+          border-color: red;
+          background-color: #fff5f5;
+        }
+
+        .bootstrap-select .dropdown-toggle.is-invalid {
+          border: 1px solid red;
+          background-color: #fff5f5;
+        }
+         .toast {
+    border-radius: 12px !important;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+    </style>
+
+    <section class="site-section">
+      <div class="container">
+
+       
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <form class="p-4 p-md-5 border rounded"  id="myForm" method="post" enctype="multipart/form-data" action="<?= base_url('recruiter/save_recruiter_form') ?>">
+              <h3 class="text-black mb-5 border-bottom pb-2">Recruiter Registration</h3>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                      <label for="imageInput" class="icon-btn upload-label" title="Upload Image">⬆️</label>
+                      <input type="file" id="imageInput" name="logo" accept="image/*" required class="form-control">
+                        <div class="preview-container">
+                          <img id="previewImage" class="circular-image" src="" style="display: none;">
+                        </div>
+                        <div>
+                          <button type="button" class="icon-btn" id="editBtn" title="Change Image">🖉</button>
+                          <button type="button" class="icon-btn" id="deleteBtn" title="Delete Image">🗑️</button>
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <?php 
+                              use Config\Database;
+                              $db = Database::connect();
+                              $query = $db->query("SELECT * FROM tbl_industry");
+                              $industry = $query->getResultArray(); 
+                        ?>
+                       <label for="industry">Industry</label>
+                          <select class="form-control selectpicker" name="industry_name" id="industry" required>
+                              <option value="">Select Industry</option>
+                                  <?php foreach ($industry as $location): ?>
+                                    <option value="<?= esc($location['industry_id']) ?>"><?= esc($location['industry_name']) ?></option>
+                                  <?php endforeach; ?>
+                              </select>
+                        <div class="invalid-feedback">Please select an industry.</div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="job-region">City/Town</label>
+                      <select class="selectpicker border rounded" name="city" id="job-region" data-style="btn-black" data-width="100%" data-live-search="true" title="City/Town" required>
+                          <option>Anywhere</option>
+                              <?php $db = Database::connect();
+                               $query = $db->query("SELECT * FROM cities");
+                              $locations = $query->getResultArray();
+
+                              foreach ($locations as $location): ?>
+                              <option value="<?= esc($location['id']) ?>">
+                                      <?= esc($location['name']) ?>
+                                </option>
+                               <?php endforeach; ?>
+                      </select>
+                    </div>
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group"  id="hospitalTypeDiv" style="display: none;">
+                      <label for="hospital-type">Type of Hospital</label>
+                          <select id="hospital-type" name="type_hospital" class="form-control">
+                            <option value="">Select Type</option>
+                            <option value="Multi Speciality">Multi Speciality</option>
+                            <option value="Super Speciality">Super Speciality</option>
+                            <option value="General Hospital">General Hospital</option>
+                            <option value="Clinic">Clinic</option>
+
+                          </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="job-title">Name</label>
+                        <input type="text" class="form-control" name="institute_name" id="institute_name" placeholder="Institution Name" required>
+                      <div class="invalid-feedback">Institution name is required.</div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                      <label for="company-name">Display Name</label>
+                      <input type="text" class="form-control" name="company_display_name" id="company-name" placeholder="Display Name" required>
+                      <div class="invalid-feedback">Display Name is required</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="job-location">Area Name</label>
+                    <input type="text" class="form-control" name="area_name" id="job-location" placeholder="Area Name" required>
+                    <div class="invalid-feedback">Area Name is required</div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="company-website">Recruiter Name</label>
+                    <input type="text" class="form-control" name="recruiter_name" id="company-website" placeholder="Recruiter Name" required>
+                    <div class="invalid-feedback">Recruiter Name is required</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="company-tagline">Pincode</label>
+                    <input type="text" class="form-control" name="pincode" id="company-tagline" placeholder="Pincode" required>
+                    <div class="invalid-feedback" id="pincodeError">Please enter a valid 6-digit pincode.</div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="company-website-fb">Mobile Number</label>
+                    <input type="text" class="form-control" name="mobile_number" id="company-website-fb" placeholder="Mobile Number" required>
+                    <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" name="email" id="email" value="<?php echo $email; ?>" placeholder="you@yourdomain.com">
+                    </div>
+                  </div>
+                  <div class="col-lg-6" style="margin-top: 27px;">
+                      <div class="row">
+                        <div class="col-3">
+                          <a href="#" class="btn btn-block btn-light btn-md">Preview</a>
+                        </div>
+                        <div class="col-3">
+                          <!-- <a href="#" class="btn btn-block btn-primary btn-md">Save Job</a> -->
+                          <button type="submit" class="btn btn-primary btn-md" id="saveBtn" disabled>Save</button>
+                        </div>
+                        
+                      </div>
+                  </div>
+              </div>
+
+
+
+              
+              
+
+              
+
+            
+
+             
+         
+              
+
+              
+
+              
+
+          
+      <!--     <div class="col-lg-4 ml-auto">
+            <div class="row">
+              <div class="col-6">
+                <a href="#" class="btn btn-block btn-light btn-md"><span class="icon-open_in_new mr-2"></span>Preview</a>
+              </div>
+              <div class="col-6">
+                
+                <button type="submit" class="btn btn-primary btn-md" id="saveBtn" disabled>Save Job</button>
+              </div>
+            </div>
+          </div> -->
+      
+            </form>
+          </div>
+
+         
+        </div>
+       
+      </div>
+    </section>
+
+
+
+
+

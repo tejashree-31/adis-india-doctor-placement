@@ -1,0 +1,275 @@
+.steps-section {
+  background-color: #fff;
+  padding: 13px 0;
+  text-align: center;
+  border-radius:39px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 50px;              /* changed from 30px */
+  height: 50px;             /* changed from 30px */
+  border: 0px dashed #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+
+.circle i {
+  font-size: 20px;          /* adjusted for 50x50 circle */
+  color: #000;
+}
+
+.step h5 {
+  font-weight: 700;
+  color: #000;
+  margin-top: 0px;
+}
+
+/* Connector Line */
+.step::after {
+  content: "";
+  position: absolute;
+  top: 25px;                /* adjusted for smaller height */
+  right: -57%;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.col-md-4:last-child .step::after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .step::after {
+    display: none;
+  }
+}
+.title-scrolls-hed
+{
+  font-weight:700 !important;font-size: 24px !important;
+}
+
+/*================================================================*/
+
+
+.award-slider-sec{
+     padding:70px 0 30px;
+    background:#fff;
+    overflow:hidden;
+}
+
+.award-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.award-heading h2{
+    font-size:48px;
+    font-weight:800;
+    color:#1d1d1d;
+}
+
+.award-heading span{
+    color:#ff4d6d;
+}
+
+.award-heading p{
+    color:#777;
+    font-size:17px;
+    margin-top:12px;
+}
+
+.awardSwiper{
+    width:100%;
+    max-width:1140px;
+    margin:auto;
+    padding:30px 15px 35px;
+    overflow:hidden;
+}
+
+/* Space between cards */
+.awardSwiper .swiper-slide{
+    display:flex;
+    justify-content:center;
+}
+
+.award-card-box{
+    
+    width:100%;
+    max-width:230px;   /* आधी 340px होते */
+    margin:auto;
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+/*    box-shadow:0 10px 30px rgba(0,0,0,.08);*/
+    transition:.35s;
+}
+
+
+.award-card-box:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(255,77,109,.15);
+}
+
+.award-card-box img{
+    width:100%;
+    aspect-ratio:1/1;   /* Square Image */
+    object-fit:cover;
+       height:130px; 
+    display:block;
+}
+
+.award-content{
+    padding:12px;
+    text-align:center;
+    background:#fff;
+
+    border:1px solid #f3d3dc;
+    border-top:none;
+
+    border-radius:0 0 18px 18px;
+    box-shadow:0 -2px 8px rgba(255,77,109,.05);
+}
+
+.award-content h4{
+    font-size:16px;
+    font-weight:700;
+    line-height:1.4;
+    min-height:42px;
+    margin-bottom:14px;
+}
+
+.award-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 22px;
+    border-radius:30px;
+    background:linear-gradient(90deg,#ff4d6d,#ff7b54);
+    color:#fff;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.award-btn:hover{
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* Arrows */
+.awardSwiper .swiper-button-prev,
+.awardSwiper .swiper-button-next{
+    width:52px;
+    height:52px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    color:#ff4d6d;
+}
+
+.awardSwiper .swiper-button-prev{
+    left:0;
+}
+
+.awardSwiper .swiper-button-next{
+    right:0;
+}
+
+.awardSwiper .swiper-button-prev:after,
+.awardSwiper .swiper-button-next:after{
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Pagination */
+.awardSwiper .swiper-pagination{
+     display:none !important;
+}
+
+.awardSwiper .swiper-pagination-bullet{
+    width:10px;
+    height:10px;
+    opacity:.4;
+    background:#ff4d6d;
+}
+
+.awardSwiper .swiper-pagination-bullet-active{
+    width:28px;
+    border-radius:30px;
+    opacity:1;
+}
+
+/* Tablet */
+@media(max-width:991px){
+
+.award-heading h2{
+    font-size:38px;
+}
+
+.award-card-box{
+    max-width:320px;
+}
+
+}
+
+/* Mobile */
+@media(max-width:767px){
+
+.award-slider-sec{
+    padding:50px 0;
+}
+
+.award-heading h2{
+    font-size:30px;
+}
+
+.award-heading p{
+    font-size:15px;
+}
+
+.award-card-box{
+    max-width:100%;
+}
+
+.award-card-box img{
+    height:180px;
+}
+
+.award-content{
+    padding:18px;
+}
+
+.award-content h4{
+    font-size:18px;
+}
+
+.award-btn{
+    width:100%;
+}
+
+.awardSwiper .swiper-button-next,
+.awardSwiper .swiper-button-prev{
+    display:none;
+}
+
+}
+
+
+
+
+
+
+
+

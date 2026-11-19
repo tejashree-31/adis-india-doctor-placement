@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #F05B65, #F5959C);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form_wrapper {
+  background: #fff;
+  border-radius: 12px;
+  width: 400px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.radio {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background: #f1f1f1;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.tab {
+  width: 50%;
+  text-align: center;
+  padding: 12px 0;
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 2;
+  color: #333;
+}
+
+.shape {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(45deg, #860C15, #F05B65);
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: left 0.3s;
+}
+
+#signup:checked ~ .tabs .shape {
+  left: 50%;
+}
+
+.form_wrap {
+  position: relative;
+}
+
+.form_field {
+  display: none;
+}
+
+#login:checked ~ .form_wrap .login_form {
+  display: block;
+}
+
+#signup:checked ~ .form_wrap .signup_form {
+  display: block;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.input_group {
+  margin-bottom: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  /*background: linear-gradient(45deg, #a40606, #d98324);*/
+  background: linear-gradient(45deg, #860C15, #F05B65);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  opacity: 0.95;
+}
+
+.forgot {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: #e60073;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.home_icon {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.home_icon i {
+  font-size: 32px;
+  color: #d4145a; /* or any color you like */
+  transition: transform 0.3s;
+}
+
+.home_icon i:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+#login:checked ~ .tabs .login_tab {
+  color: #fff;
+}
+
+/* Make signup tab text white when selected */
+#signup:checked ~ .tabs .signup_tab {
+  color: #fff;
+}

@@ -1,0 +1,57 @@
+.modal-header1
+{
+	background: linear-gradient(135deg,#06141f,#112131,#0b203a);
+    color: #f1f1f1;
+    border-bottom: 0;
+    border-radius: 22px 22px 0 0;
+    padding: 12px 20px;
+}
+
+
+.modal-title1
+{
+	font-weight: 700!important; 
+	letter-spacing: 0.5px !important;
+}
+
+.modal-body1
+{
+/*	background: rgba(255,255,255,0.06);*/
+	background: #fff;
+
+                    padding: 30px 28px;
+                    color: #ffffff;
+                    font-size: 17px;
+                    border-radius: 0 0 22px 22px;
+}
+.row_line
+{
+	line-height: 1.9;
+}
+.label_head
+{
+	color:#000;
+}
+.text_color
+{
+	color:#000;
+}
+.model_content1
+{
+	border-radius: 22px;
+                                background: rgba(255,255,255,0.12);
+                                backdrop-filter: blur(18px);
+                                border: 1px solid rgba(255,255,255,0.25);
+                                box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+}
+.simple-chk {
+    display: inline-flex;
+
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.simple-chk input {
+    width: 18px;
+    height: 18px;
+}

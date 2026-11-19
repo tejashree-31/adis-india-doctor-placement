@@ -1,0 +1,117 @@
+.all_jobs_container
+{
+	margin-top:-64px;
+}
+.posting_div
+{
+	display:flex; justify-content:center; margin:20px 0; flex-wrap:wrap;
+}
+.search_poting_form
+{
+	display:flex; align-items:center; flex-wrap:wrap; gap:10px; width:100%; max-width:500px;
+}
+.search_input_post
+{
+	flex:1;
+	padding:12px 20px;
+	border:2px solid #FBDDDF;
+	border-radius:50px;
+	outline:none;
+	transition: all 0.3s ease;
+}
+.search_post_button
+{
+	padding:12px 25px;
+          border:none;
+          background:#FBDDDF;
+          color:white;
+          border-radius:50px;
+          cursor:pointer;
+          transition: all 0.3s ease;
+          white-space:nowrap;
+}
+.search_post_container
+{
+	margin:20px auto;
+
+	display: flex;
+    flex-direction: column;
+    gap: 10px; /* Controls the space between each job post */
+}
+.apply_button_search_div
+{
+	 display: flex;
+    align-items: flex-start;;
+    padding: 15px;
+    background-color: #f08080; /* pink background like your screenshot */
+    border-radius: 8px;
+    gap: 15px; /* Space between circle icon and job details */
+    margin: 0; /* remove extra margin */
+    position: relative;
+}
+.apply_button_search {
+    position: absolute; /* top-right corner */
+   
+    right: 10px;
+    background-color: white;
+    color: #000;
+    border: none;
+    
+    padding: 6px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+        margin-right: -5px;
+}
+/*.apply_button_search {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}*/
+.circle_search_post
+{
+	width:50px;
+          height:50px;
+          background-color:white;
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-weight:bold;
+          color:#000;
+          flex-shrink:0;
+}
+.job_role_search_post
+{
+	margin-left:15px; color:white; min-width:0;
+}
+.job_text_search
+{
+	 font-weight:bold;
+            font-size:1rem;
+            text-transform:capitalize;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+}
+.location_search
+{
+	 display:flex;
+      align-items:center;
+      opacity:0.9;
+      margin-top:3px;
+      gap:15px; 
+      flex-wrap:wrap; 
+}
+
+
+
+

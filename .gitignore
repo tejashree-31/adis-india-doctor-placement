@@ -1,0 +1,62 @@
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*password*.txt
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Local database dumps may contain credentials or personal data
+/adisindia_db.sql
+
+# CodeIgniter runtime files
+/writable/cache/*
+/writable/logs/*
+/writable/session/*
+/writable/uploads/*
+
+# Dependencies and local IDE settings
+/vendor/
+/.idea/
+/.vscode/
+
+# Additional local database dumps and certificate files
+/db/adisindia_db.sql
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+
+# Candidate uploads may contain private applicant documents
+/uploads_candidate/**
+!/uploads_candidate/.gitkeep
+/Microsoft/Windows/PowerShell/ModuleAnalysisCache
+
+/jobseeker/resume/**
+
+!/jobseeker/resume/.gitkeep
+
+/public/jobseeker/resume/**
+
+!/public/jobseeker/resume/.gitkeep
+
+/writable/invoices/**
+
+!/writable/invoices/.gitkeep
+
+/writable/debugbar/**
+
+!/writable/debugbar/.gitkeep
+
+/writable/jobseeker/**
+
+!/writable/jobseeker/profile_image/
+
+!/writable/jobseeker/profile_image/.gitkeep
+
+!/writable/jobseeker/resume/
+
+!/writable/jobseeker/resume/.gitkeep
